@@ -27,11 +27,12 @@ cd $ROOT_DIR
 
 TEST_FOLDERS=$(ls -d tests/t*/)
 
+LIB_PATH=$PWD/$LIB_NAME
+LIB_INC_PATH=$PWD/$LIB_INC_NAME
 for FOLDER in $TEST_FOLDERS
 do
-    echo $FOLDER
     cd $FOLDER
-    ./run.sh $PWD/$LIB_NAME
+    ./run.sh $LIB_PATH $LIB_INC_PATH
     cd ../..
 done
 
@@ -57,4 +58,4 @@ done
 
 # Every function has it own tests set.
 
-#rm -f $LIB_NAME
+rm -f $LIB_NAME $LIB_INC_NAME

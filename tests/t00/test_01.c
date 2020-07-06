@@ -4,12 +4,11 @@
 
 // Tests
 
-void test_print_a() {
+void test_print_0() {
     // Given
-    mx_printchar('a');
+    mx_printchar(0);
 
     // When
 
     // Then
 }
-
