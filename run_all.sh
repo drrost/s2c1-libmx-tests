@@ -11,24 +11,29 @@ PATH_TO_SRC='../src/'
 AVAILABLE_FUNCTIONS=(open write)
 
 # ----
-TEST_FOLDERS=$(ls -d t*/)
-
-for FOLDER in $TEST_FOLDERS
-do
-    
-    echo $FOLDER
-done
 
 # Run the Makefile
 ROOT_DIR=$(echo $PWD)
 LIB_NAME="libmx.a"
+LIB_INC_NAME="libmx.h"
 cd ../src/
 make
 mv ./obj/$LIB_NAME $ROOT_DIR/
+cp ./inc/$LIB_INC_NAME $ROOT_DIR/
 make clean
 cd $ROOT_DIR
 
 # Run all the tests
+
+TEST_FOLDERS=$(ls -d tests/t*/)
+
+for FOLDER in $TEST_FOLDERS
+do
+    echo $FOLDER
+    cd $FOLDER
+    ./run.sh $PWD/$LIB_NAME
+    cd ../..
+done
 
 # Utils pack
 # tUtils
@@ -52,4 +57,4 @@ cd $ROOT_DIR
 
 # Every function has it own tests set.
 
-rm -f $LIB_NAME
+#rm -f $LIB_NAME
