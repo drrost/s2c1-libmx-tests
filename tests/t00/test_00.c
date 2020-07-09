@@ -6,10 +6,18 @@
 
 void test_print_a() {
     // Given
-    mx_printchar('a');
 
     // When
+    mx_printchar('a');
 
     // Then
 }
 
+void test_print_b() {
+    // Given
+
+    // When
+    mx_printchar('b');
+
+    // Then
+}
