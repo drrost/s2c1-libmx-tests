@@ -49,3 +49,29 @@ void test_mx_br_to_hex_0() {
 
     free(result);
 }
+
+void test_mx_br_to_hex_52() {
+    // Given
+    unsigned long in = 52;
+
+    // When
+    char *result = mx_nbr_to_hex(in);
+
+    // Then
+    ASSERT_TRUE(strcmp(result, "34") == 0);
+
+    free(result);
+}
+
+void test_mx_br_to_hex_1000() {
+    // Given
+    unsigned long in = 1000;
+
+    // When
+    char *result = mx_nbr_to_hex(in);
+
+    // Then
+    ASSERT_TRUE(strcmp(result, "3e8") == 0);
+
+    free(result);
+}
