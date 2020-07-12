@@ -37,7 +37,26 @@ void test_print_strarr_delim_null() {
     // Then
 }
 
-// arr null
-// delim null
-// empty delim
+void test_print_strarr_delim_empty() {
+    // Given
+    char *arr[] = {"a", "b", "c", 0};
+    char *delim = "";
+
+    // When
+    mx_print_strarr(arr, delim);
+
+    // Then
+}
+
+void test_print_strarr_delim_newline() {
+    // Given
+    char *arr[] = {"a", "b", "c", 0};
+    char *delim = "\n";
+
+    // When
+    mx_print_strarr(arr, delim);
+
+    // Then
+}
+
 // delim with non printable symbols

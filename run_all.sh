@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clear
+
 # Check mandatory files/folders exist
 MANDATORY_FILES="src/ inc/ inc/libmx.h Makefile"
 PATH_TO_SRC='../src/'
