@@ -31,12 +31,18 @@ TEST_FOLDERS=$(ls -d tests/t*/)
 
 LIB_PATH=$PWD/$LIB_NAME
 LIB_INC_PATH=$PWD/$LIB_INC_NAME
-for FOLDER in $TEST_FOLDERS
-do
+
+if [ $# -eq 0 ]; then
+  for FOLDER in $TEST_FOLDERS; do
     cd $FOLDER
     ./run.sh $LIB_PATH $LIB_INC_PATH
     cd ../..
-done
+  done
+else
+  cd "tests/$1"
+  ./run.sh $LIB_PATH $LIB_INC_PATH
+  cd ../..
+fi
 
 # Utils pack
 # tUtils
