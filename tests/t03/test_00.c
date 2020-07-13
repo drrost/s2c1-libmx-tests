@@ -8,11 +8,14 @@ void test_print_strarr_basic() {
     // Given
     char *arr[] = {"a", "b", "c", 0};
     char *delim = "|";
+    INTERCEPT_STDOUT;
 
     // When
     mx_print_strarr(arr, delim);
 
     // Then
+    RESTORE_STDOUT;
+    ASSERT_TRUE(strcmp("a|b|c|\n", buf) == 0);
 }
 
 void test_print_strarr_arr_null() {
@@ -41,22 +44,28 @@ void test_print_strarr_delim_empty() {
     // Given
     char *arr[] = {"a", "b", "c", 0};
     char *delim = "";
+    INTERCEPT_STDOUT;
 
     // When
     mx_print_strarr(arr, delim);
 
     // Then
+    RESTORE_STDOUT;
+    ASSERT_STDOUT_EQUALS("abc\n");
 }
 
 void test_print_strarr_delim_newline() {
     // Given
     char *arr[] = {"a", "b", "c", 0};
     char *delim = "\n";
+    INTERCEPT_STDOUT;
 
     // When
     mx_print_strarr(arr, delim);
 
     // Then
+    RESTORE_STDOUT;
+    ASSERT_TRUE(strcmp("a\nb\nc\n\n", buf) == 0);
 }
 
 // delim with non printable symbols

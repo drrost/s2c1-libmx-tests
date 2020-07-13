@@ -6,18 +6,24 @@
 
 void test_print_a() {
     // Given
+    INTERCEPT_STDOUT;
 
     // When
     mx_printchar('a');
 
     // Then
+    RESTORE_STDOUT;
+    ASSERT_EQUALS('a', buf[0]);
 }
 
 void test_print_b() {
     // Given
+    INTERCEPT_STDOUT;
 
     // When
     mx_printchar('b');
 
     // Then
+    RESTORE_STDOUT;
+    ASSERT_EQUALS('b', buf[0]);
 }
