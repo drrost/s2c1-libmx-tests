@@ -12,4 +12,5 @@ void test_print_unicode_ok() {
 //    mx_print_unicode(wc);
 
     // Then
+    ASSERT_TRUE(0);
 }
