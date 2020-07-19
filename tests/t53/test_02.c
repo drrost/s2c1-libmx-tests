@@ -35,16 +35,18 @@ void test_swap_0_1() {
 
 void test_sort_list() {
     // Given
-    const char *arr[] = {"wFXKBniLxp", "rpVor", "HuH", "iSp", "VJroUIrd"};
+    const char *arr[] = {"wFXKBniLxp", "rpVor", "huH", "iSp", "iJroUIrd"};
     t_list *list = create_list_test(arr, 5);
 
     // When
-    print_list_str(list);
     mx_sort_list(list, compare_strings);
-    puts("--");
 
     // Then
-    print_list_str(list);
+    ASSERT_EQUALS_STR("huH", node_at(list, 0)->data);
+    ASSERT_EQUALS_STR("iJroUIrd", node_at(list, 1)->data);
+    ASSERT_EQUALS_STR("iSp", node_at(list, 2)->data);
+    ASSERT_EQUALS_STR("rpVor", node_at(list, 3)->data);
+    ASSERT_EQUALS_STR("wFXKBniLxp", node_at(list, 4)->data);
     free_list_fully(list);
 }
 

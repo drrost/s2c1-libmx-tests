@@ -16,47 +16,6 @@ void print_node(t_list *node) {
 
 // --
 
-//t_list *mx_create_node(void *data) {
-//    t_list *node = (t_list *) malloc(sizeof(t_list));
-//    node->data = data;
-//    node->next = 0;
-//    return node;
-//}
-//
-//void mx_push_front(t_list **list, void *data) {
-//    t_list *front = mx_create_node(data);
-//    front->next = *list;
-//    *list = front;
-//}
-//
-//void mx_push_back(t_list **list, void *data) {
-//    if (list == 0)
-//        return;
-//
-//    if (*list == 0) {
-//        *list = mx_create_node(data);
-//        return;
-//    }
-//
-//    t_list *node = *list;
-//    while (1) {
-//        if (node->next == 0) {
-//            node->next = mx_create_node(data);
-//            return;
-//        }
-//        node = node->next;
-//    }
-//}
-//
-//void mx_pop_front(t_list **list) {
-//    if (*list == 0) {
-//        return;
-//    }
-//    t_list *node = *list;
-//    *list = node->next;
-//    free(node);
-//}
-//
 void free_list(t_list *list) {
     t_list *node = list;
     while (1) {
