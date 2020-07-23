@@ -15,7 +15,7 @@ void test_print_strarr_basic() {
 
     // Then
     RESTORE_STDOUT;
-    ASSERT_TRUE(strcmp("a|b|c|\n", buf) == 0);
+    ASSERT_EQUALS_STR("a|b|c\n", buf);
 }
 
 void test_print_strarr_arr_null() {
@@ -65,7 +65,7 @@ void test_print_strarr_delim_newline() {
 
     // Then
     RESTORE_STDOUT;
-    ASSERT_TRUE(strcmp("a\nb\nc\n\n", buf) == 0);
+    ASSERT_TRUE(strcmp("a\nb\nc\n", buf) == 0);
 }
 
 // delim with non printable symbols

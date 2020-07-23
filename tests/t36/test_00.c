@@ -6,7 +6,7 @@
 
 #include <fcntl.h>
 
-void  test_mx_file_to_str_2() {
+void test_mx_file_to_str_2() {
     // Given
     const char *file_name = "fragment";
     int fd = open(file_name, O_RDONLY);
@@ -34,7 +34,7 @@ void  test_mx_file_to_str_2() {
     close(fd);
 }
 
-void  test_mx_file_to_str_small() {
+void test_mx_file_to_str_small() {
     // Given
     const char *file_name = "fragment_small";
     int fd = open(file_name, O_RDONLY);
@@ -77,7 +77,7 @@ void test_mx_file_to_str_two() {
 
     // Then
     ASSERT_EQUALS(25, result);
-    ASSERT_TRUE(strcmp("The hotel was abandoned a", str) == 0);
+    ASSERT_EQUALS_STR("The hotel was abandoned a", str);
     free(str);
 
     result = mx_read_line(&str, 4, 'f', fd_2);
@@ -108,4 +108,8 @@ void test_mx_file_to_str_two() {
 
     close(fd_1);
     close(fd_2);
+}
+
+void test_mx_read_line_invalid_fd() {
+    // Given
 }

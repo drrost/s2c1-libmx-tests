@@ -12,7 +12,7 @@ void test_mx_file_to_str() {
     char *result = mx_file_to_str(file_name);
 
     // Then
-    ASSERT_TRUE(strcmp(result, "Matrix") == 0);
+    ASSERT_EQUALS_STR("Matrix", result);
     ASSERT_EQUALS(6, strlen(result));
 
     free(result);

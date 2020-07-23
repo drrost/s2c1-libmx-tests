@@ -20,7 +20,7 @@ LIB_NAME="libmx.a"
 LIB_INC_NAME="libmx.h"
 cd ../src/
 make
-mv ./obj/$LIB_NAME $ROOT_DIR/
+mv ./$LIB_NAME $ROOT_DIR/
 cp ./inc/$LIB_INC_NAME $ROOT_DIR/
 make clean
 cd $ROOT_DIR
