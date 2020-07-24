@@ -4,6 +4,8 @@
 
 #include <limits.h>
 
+char *test_case_name = "mx_push_front";
+
 // Tests
 
 t_list *mx_create_node(void *data);

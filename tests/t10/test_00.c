@@ -2,6 +2,8 @@
 #include "../../lib/test_lib.h"
 #include "../../libmx.h"
 
+char *test_case_name = "mx_foreach";
+
 void mx_printint(int n) {
     printf("%d\n", n);
 }

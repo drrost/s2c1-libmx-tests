@@ -4,6 +4,8 @@
 
 #include <limits.h>
 
+char *test_case_name = "mx_push_front";
+
 // Tests
 
 void test_mx_push_front() {

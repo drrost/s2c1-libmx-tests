@@ -4,6 +4,8 @@
 
 #include <limits.h>
 
+char *test_case_name = "mx_sqrt";
+
 // Tests
 
 void test_sqrt_25() {

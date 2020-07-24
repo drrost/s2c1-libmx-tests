@@ -2,6 +2,8 @@
 #include "../../lib/test_lib.h"
 #include "../../libmx.h"
 
+char *test_case_name = "mx_strstr";
+
 // Tests
 
 void test_strstr_1() {

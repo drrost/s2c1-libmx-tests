@@ -2,6 +2,8 @@
 #include "../../lib/test_lib.h"
 #include "../../libmx.h"
 
+char *test_case_name = "mx_hex_to_nbr";
+
 // Tests
 
 void test_hex_to_nbr_C4() {

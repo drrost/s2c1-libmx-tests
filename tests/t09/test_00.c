@@ -4,6 +4,8 @@
 
 #include <limits.h>
 
+char *test_case_name = "mx_itoa";
+
 // Tests
 
 void test_itoa_1() {
@@ -26,7 +28,7 @@ void test_itoa_0() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "0") == 0);
+    ASSERT_EQUALS_STR("0", string);
     free(string);
 }
 

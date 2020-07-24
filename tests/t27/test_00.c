@@ -2,6 +2,8 @@
 #include "../../lib/test_lib.h"
 #include "../../libmx.h"
 
+char *test_case_name = "mx_get_substr_index";
+
 // Tests
 
 void test_get_substr_index1() {

@@ -2,6 +2,8 @@
 #include "../../lib/test_lib.h"
 #include "../../libmx.h"
 
+char *test_case_name = "mx_print_strarr";
+
 // Tests
 
 void test_print_strarr_basic() {
@@ -51,7 +53,7 @@ void test_print_strarr_delim_empty() {
 
     // Then
     RESTORE_STDOUT;
-    ASSERT_STDOUT_EQUALS("abc\n");
+    ASSERT_EQUALS_STR("abc\n", buf)
 }
 
 void test_print_strarr_delim_newline() {

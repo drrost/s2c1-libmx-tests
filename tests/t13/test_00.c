@@ -2,6 +2,8 @@
 #include "../../lib/test_lib.h"
 #include "../../libmx.h"
 
+char *test_case_name = "mx_quicksort";
+
 // Tests
 
 void test_quick_sort_arr_0() {

@@ -4,6 +4,8 @@
 
 // Tests
 
+char *test_case_name = "mx_count_substr";
+
 void test_count_substr_1() {
     // Given
     char s1[] = "abc";

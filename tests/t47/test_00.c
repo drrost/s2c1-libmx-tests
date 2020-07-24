@@ -4,6 +4,8 @@
 
 #include <limits.h>
 
+char *test_case_name = "mx_create_node";
+
 // Tests
 
 void test_mx_create_node() {

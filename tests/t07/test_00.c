@@ -4,6 +4,8 @@
 
 #include <limits.h>
 
+char *test_case_name = "mx_nbr_to_hex";
+
 // Tests
 
 void test_mx_br_to_hex_1234567890() {
@@ -14,7 +16,7 @@ void test_mx_br_to_hex_1234567890() {
     char *result = mx_nbr_to_hex(in);
 
     // Then
-    ASSERT_TRUE(strcmp(result, "1234567890abc") == 0);
+    ASSERT_EQUALS_STR("1234567890abc", result);
 
     free(result);
 }

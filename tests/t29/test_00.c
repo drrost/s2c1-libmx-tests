@@ -2,6 +2,8 @@
 #include "../../lib/test_lib.h"
 #include "../../libmx.h"
 
+char *test_case_name = "mx_count_words";
+
 // Tests
 
 void test_count_words_ex1() {

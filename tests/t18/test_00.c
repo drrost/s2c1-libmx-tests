@@ -2,6 +2,8 @@
 #include "../../lib/test_lib.h"
 #include "../../libmx.h"
 
+char *test_case_name = "mx_del_strarr";
+
 // Tests
 
 char *xx_strnew(const int size);

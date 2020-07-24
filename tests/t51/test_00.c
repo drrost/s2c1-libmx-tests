@@ -4,6 +4,8 @@
 
 #include <limits.h>
 
+char *test_case_name = "mx_pop_back";
+
 // Tests
 
 t_list *mx_create_node(void *data);

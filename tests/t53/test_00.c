@@ -6,6 +6,8 @@
 
 #include "helpers.c"
 
+char *test_case_name = "mx_push_front";
+
 // Tests
 
 void test_mx_print_list() {

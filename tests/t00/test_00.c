@@ -4,6 +4,8 @@
 
 // Tests
 
+char *test_case_name = "mx_printchar";
+
 void test_print_a() {
     // Given
     INTERCEPT_STDOUT;

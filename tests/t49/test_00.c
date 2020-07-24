@@ -4,6 +4,8 @@
 
 #include <limits.h>
 
+char *test_case_name = "mx_push_back";
+
 // Tests
 
 void mx_push_front(t_list **list, void *data) {
