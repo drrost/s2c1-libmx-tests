@@ -16,7 +16,7 @@ void test_print_unicode_ok() {
 
     // Then
     restore_stdout();
-    ASSERT_EQUALS('a', buf[0]);
+    ASSERT_EQUALS('a', STDOUT_BUFF[0]);
 }
 
 

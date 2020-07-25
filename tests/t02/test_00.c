@@ -16,5 +16,5 @@ void test_print_string() {
 
     // Then
     restore_stdout();
-    ASSERT_TRUE(strcmp("aBcD", buf) == 0)
+    ASSERT_EQUALS_STR("aBcD", STDOUT_BUFF);
 }

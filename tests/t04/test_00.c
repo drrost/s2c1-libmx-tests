@@ -16,7 +16,7 @@ void test_print_int_25() {
 
     // Then
     restore_stdout();
-    ASSERT_TRUE(strcmp("25", buf) == 0);
+    ASSERT_EQUALS_STR("25", STDOUT_BUFF);
 }
 
 void test_print_int_2147483647() {

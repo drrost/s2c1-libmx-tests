@@ -15,7 +15,7 @@ void test_print_a() {
 
     // Then
     restore_stdout();
-    ASSERT_EQUALS('a', buf[0]);
+    ASSERT_EQUALS('a', STDOUT_BUFF[0]);
 }
 
 void test_print_b() {
@@ -27,5 +27,5 @@ void test_print_b() {
 
     // Then
     restore_stdout();
-    ASSERT_EQUALS('b', buf[0]);
+    ASSERT_EQUALS('b', STDOUT_BUFF[0]);
 }
