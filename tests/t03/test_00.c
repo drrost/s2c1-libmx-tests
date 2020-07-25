@@ -14,9 +14,7 @@ void test_print_strarr_basic() {
 
     // When
 
-    TRY
-        mx_print_strarr(arr, delim);
-    CATCH;
+    mx_print_strarr(arr, delim);
 
     // Then
     restore_stdout();
@@ -29,9 +27,7 @@ void test_print_strarr_arr_null() {
     char *delim = "|";
 
     // When
-    TRY
-        mx_print_strarr(arr, delim);
-    CATCH;
+    mx_print_strarr(arr, delim);
 
     // Then
 }
@@ -42,9 +38,7 @@ void test_print_strarr_delim_null() {
     char *delim = 0;
 
     // When
-    TRY
-        mx_print_strarr(arr, delim);
-    CATCH;
+    mx_print_strarr(arr, delim);
 
     // Then
 }
@@ -56,9 +50,7 @@ void test_print_strarr_delim_empty() {
     intercept_stdout();
 
     // When
-    TRY
-        mx_print_strarr(arr, delim);
-    CATCH;
+    mx_print_strarr(arr, delim);
 
     // Then
     restore_stdout();
