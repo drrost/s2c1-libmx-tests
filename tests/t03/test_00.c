@@ -4,7 +4,45 @@
 
 char *test_case_name = "mx_print_strarr";
 
+// SEGFAULT interception
+#include <setjmp.h>
+#include <signal.h>
+#include <stdio.h>
+#include <string.h>
+
+static sigjmp_buf point;
+
+static void handler(int sig, siginfo_t *siginfo, void *p) {
+    sig++;
+    siginfo++;
+    char *a = (char *) p;
+    a++;
+    longjmp(point, 1);
+}
+
 // Tests
+
+#define TRY \
+    struct sigaction sa; \
+    memset(&sa, 0, sizeof(struct sigaction)); \
+    sigemptyset(&sa.sa_mask); \
+\
+    sa.sa_flags = SA_NODEFER; \
+    sa.sa_sigaction = handler; \
+\
+    sigaction(SIGSEGV, &sa, NULL); \
+    if (setjmp(point) == 0) { \
+
+#define CATCH \
+    } else { \
+    RESTORE_STDOUT; \
+    char *s = (char *) malloc(1024); \
+    sprintf(s, "     \"%s()\" test failed because of Segmentation fault\n", \
+        __func__); \
+    test_print_fail(s); \
+    free(s); \
+    return; \
+}
 
 void test_print_strarr_basic() {
     // Given
@@ -13,7 +51,10 @@ void test_print_strarr_basic() {
     INTERCEPT_STDOUT;
 
     // When
-    mx_print_strarr(arr, delim);
+
+    TRY
+        mx_print_strarr(arr, delim);
+    CATCH;
 
     // Then
     RESTORE_STDOUT;

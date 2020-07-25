@@ -47,7 +47,7 @@ void test_mx_memchr_minus() {
     ASSERT_EQUALS_STR("\\fj", result);
 }
 
-void  test_mx_memchr_ex1() {
+void test_mx_memchr_ex1() {
     // Given
     char str[] = "Trinity";
     int c = 'i';
@@ -60,7 +60,7 @@ void  test_mx_memchr_ex1() {
     ASSERT_EQUALS_STR("ity", result);
 }
 
-void  test_mx_memchr_ex2() {
+void test_mx_memchr_ex2() {
     // Given
     char str[] = "Trinity";
     int c = 'M';
