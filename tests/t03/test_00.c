@@ -37,8 +37,7 @@ static void handler(int sig, siginfo_t *siginfo, void *p) {
     } else { \
     RESTORE_STDOUT; \
     char *s = (char *) malloc(1024); \
-    sprintf(s, "     \"%s()\" test failed because of Segmentation fault\n", \
-        __func__); \
+    sprintf(s, "     Segmentation fault: \"\033[1m%s()\033[0m\"\n", __func__); \
     test_print_fail(s); \
     free(s); \
     return; \
@@ -58,7 +57,7 @@ void test_print_strarr_basic() {
 
     // Then
     RESTORE_STDOUT;
-    ASSERT_EQUALS_STR("a|b|c\n", buf);
+    ASSERT_EQUALS_STR("a|b|c\n", STDOUT_BUFF);
 }
 
 void test_print_strarr_arr_null() {
@@ -67,7 +66,9 @@ void test_print_strarr_arr_null() {
     char *delim = "|";
 
     // When
-    mx_print_strarr(arr, delim);
+    TRY
+        mx_print_strarr(arr, delim);
+    CATCH;
 
     // Then
 }
@@ -78,7 +79,9 @@ void test_print_strarr_delim_null() {
     char *delim = 0;
 
     // When
-    mx_print_strarr(arr, delim);
+    TRY
+        mx_print_strarr(arr, delim);
+    CATCH;
 
     // Then
 }
@@ -90,11 +93,13 @@ void test_print_strarr_delim_empty() {
     INTERCEPT_STDOUT;
 
     // When
-    mx_print_strarr(arr, delim);
+    TRY
+        mx_print_strarr(arr, delim);
+    CATCH;
 
     // Then
     RESTORE_STDOUT;
-    ASSERT_EQUALS_STR("abc\n", buf)
+    ASSERT_EQUALS_STR("abc\n", STDOUT_BUFF)
 }
 
 void test_print_strarr_delim_newline() {
@@ -108,7 +113,7 @@ void test_print_strarr_delim_newline() {
 
     // Then
     RESTORE_STDOUT;
-    ASSERT_TRUE(strcmp("a\nb\nc\n", buf) == 0);
+    ASSERT_EQUALS_STR("a\nb\nc\n", STDOUT_BUFF)
 }
 
 // delim with non printable symbols
