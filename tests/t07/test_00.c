@@ -47,7 +47,7 @@ void test_mx_br_to_hex_0() {
     char *result = mx_nbr_to_hex(in);
 
     // Then
-    ASSERT_TRUE(strcmp(result, "0") == 0);
+    ASSERT_EQUALS_STR("0", result);
 
     free(result);
 }

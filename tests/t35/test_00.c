@@ -28,8 +28,7 @@ void test_mx_file_to_str_2() {
     char *result = mx_file_to_str(file_name);
 
     // Then
-//    printf("result: \"%s\"\n", result);
-    ASSERT_TRUE(strcmp(result, "Matrix\nMatrix") == 0);
+    ASSERT_EQUALS_STR("Matrix\nMatrix", result);
     ASSERT_EQUALS(13, strlen(result));
 
     free(result);

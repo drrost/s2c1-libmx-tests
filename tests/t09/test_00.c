@@ -52,7 +52,7 @@ void test_itoa_10() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "10") == 0);
+    ASSERT_EQUALS_STR("10", string);
     free(string);
 }
 
@@ -64,7 +64,7 @@ void test_itoa_12() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "12") == 0);
+    ASSERT_EQUALS_STR("12", string);
     free(string);
 }
 
@@ -76,7 +76,7 @@ void test_itoa_13() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "13") == 0);
+    ASSERT_EQUALS_STR("13", string);
     free(string);
 }
 
@@ -90,7 +90,7 @@ void test_itoa_minus_1() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "-1") == 0);
+    ASSERT_EQUALS_STR("-1", string);
     free(string);
 }
 
@@ -102,7 +102,7 @@ void test_itoa_minus_9() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "-9") == 0);
+    ASSERT_EQUALS_STR("-9", string);
     free(string);
 }
 
@@ -114,7 +114,7 @@ void test_itoa_minus_10() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "-10") == 0);
+    ASSERT_EQUALS_STR("-10", string);
     free(string);
 }
 
@@ -126,7 +126,7 @@ void test_itoa_minus_11() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "-11") == 0);
+    ASSERT_EQUALS_STR("-11", string);
     free(string);
 }
 
@@ -140,7 +140,7 @@ void test_itoa_minus_12345() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "-12345") == 0);
+    ASSERT_EQUALS_STR("-12345", string);
     free(string);
 }
 
@@ -152,7 +152,7 @@ void test_itoa_98767() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "98767") == 0);
+    ASSERT_EQUALS_STR("98767", string);
     free(string);
 }
 
@@ -166,7 +166,7 @@ void test_itoa_INT_MAX() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "2147483647") == 0);
+    ASSERT_EQUALS_STR("2147483647", string);
     free(string);
 }
 
@@ -178,6 +178,6 @@ void test_itoa_INT_MIN() {
     char *string = mx_itoa(number);
 
     // Then
-    ASSERT_TRUE(strcmp(string, "-2147483648") == 0);
+    ASSERT_EQUALS_STR("-2147483648", string);
     free(string);
 }
