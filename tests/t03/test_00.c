@@ -35,7 +35,7 @@ static void handler(int sig, siginfo_t *siginfo, void *p) {
 
 #define CATCH \
     } else { \
-    RESTORE_STDOUT; \
+    restore_stdout(); \
     char *s = (char *) malloc(1024); \
     sprintf(s, "     Segmentation fault: \"\033[1m%s()\033[0m\"\n", __func__); \
     test_print_fail(s); \
@@ -47,7 +47,7 @@ void test_print_strarr_basic() {
     // Given
     char *arr[] = {"a", "b", "c", 0};
     char *delim = "|";
-    INTERCEPT_STDOUT;
+    intercept_stdout();
 
     // When
 
@@ -56,7 +56,7 @@ void test_print_strarr_basic() {
     CATCH;
 
     // Then
-    RESTORE_STDOUT;
+    restore_stdout();
     ASSERT_EQUALS_STR("a|b|c\n", STDOUT_BUFF);
 }
 
@@ -90,7 +90,7 @@ void test_print_strarr_delim_empty() {
     // Given
     char *arr[] = {"a", "b", "c", 0};
     char *delim = "";
-    INTERCEPT_STDOUT;
+    intercept_stdout();
 
     // When
     TRY
@@ -98,7 +98,7 @@ void test_print_strarr_delim_empty() {
     CATCH;
 
     // Then
-    RESTORE_STDOUT;
+    restore_stdout();
     ASSERT_EQUALS_STR("abc\n", STDOUT_BUFF)
 }
 
@@ -106,13 +106,13 @@ void test_print_strarr_delim_newline() {
     // Given
     char *arr[] = {"a", "b", "c", 0};
     char *delim = "\n";
-    INTERCEPT_STDOUT;
+    intercept_stdout();
 
     // When
     mx_print_strarr(arr, delim);
 
     // Then
-    RESTORE_STDOUT;
+    restore_stdout();
     ASSERT_EQUALS_STR("a\nb\nc\n", STDOUT_BUFF)
 }
 

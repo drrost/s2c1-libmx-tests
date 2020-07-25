@@ -8,24 +8,24 @@ char *test_case_name = "mx_printchar";
 
 void test_print_a() {
     // Given
-    INTERCEPT_STDOUT;
+    intercept_stdout();
 
     // When
     mx_printchar('a');
 
     // Then
-    RESTORE_STDOUT;
+    restore_stdout();
     ASSERT_EQUALS('a', buf[0]);
 }
 
 void test_print_b() {
     // Given
-    INTERCEPT_STDOUT;
+    intercept_stdout();
 
     // When
     mx_printchar('b');
 
     // Then
-    RESTORE_STDOUT;
+    restore_stdout();
     ASSERT_EQUALS('b', buf[0]);
 }

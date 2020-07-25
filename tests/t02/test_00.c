@@ -8,13 +8,13 @@ char *test_case_name = "mx_printstr";
 
 void test_print_string() {
     // Given
-    INTERCEPT_STDOUT;
+    intercept_stdout();
     char *s = "aBcD";
 
     // When
     mx_printstr(s);
 
     // Then
-    RESTORE_STDOUT;
+    restore_stdout();
     ASSERT_TRUE(strcmp("aBcD", buf) == 0)
 }
