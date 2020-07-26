@@ -19,7 +19,7 @@ void test_mx_memcpy() {
 
     // Then
     ASSERT_EQUALS(str2, result);
-    ASSERT_TRUE(strcmp("McDonaaaa", result) == 0);
+    ASSERT_EQUALS_STR("McDonaaaa", result);
 }
 
 void test_mx_memcpy_over() {
@@ -33,5 +33,5 @@ void test_mx_memcpy_over() {
 
     // Then
     ASSERT_EQUALS(str2, result);
-    ASSERT_TRUE(strcmp("McDonalds", result) == 0);
+    ASSERT_EQUALS_STR("McDonalds", result);
 }
