@@ -33,7 +33,7 @@ void test_mx_br_to_hex_1() {
         char *result = mx_nbr_to_hex(rnd_value);
 
         // Then
-        ASSERT_TRUE(strcmp(result, standard_value) == 0);
+        ASSERT_EQUALS_STR(standard_value, result);
 
         free(result);
     }
@@ -60,7 +60,7 @@ void test_mx_br_to_hex_52() {
     char *result = mx_nbr_to_hex(in);
 
     // Then
-    ASSERT_TRUE(strcmp(result, "34") == 0);
+    ASSERT_EQUALS_STR("34", result);
 
     free(result);
 }
@@ -73,7 +73,7 @@ void test_mx_br_to_hex_1000() {
     char *result = mx_nbr_to_hex(in);
 
     // Then
-    ASSERT_TRUE(strcmp(result, "3e8") == 0);
+    ASSERT_EQUALS_STR("3e8", result);
 
     free(result);
 }

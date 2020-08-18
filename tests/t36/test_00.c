@@ -8,7 +8,7 @@ char *test_case_name = "mx_read_line";
 
 #include <fcntl.h>
 
-void test_mx_file_to_str_2() {
+void test_mx_read_line() {
     // Given
     const char *file_name = "fragment";
     int fd = open(file_name, O_RDONLY);
