@@ -37,7 +37,7 @@ bool compare_strings(void *s1, void *s2) {
 
 void test_list_comb_sort() {
     // Given
-    int n = 1500;
+    int n = 15000;
     t_list *list = 0;
     for (int i = 0; i < n; i++) {
         char *str = rd_random_str();
@@ -46,8 +46,8 @@ void test_list_comb_sort() {
 
     // When
     clock_t t = clock();
-//    mx_sort_list(list, compare_strings);
-    mx_list_comb_sort(list, compare_strings);
+    mx_sort_list(list, compare_strings);
+//    mx_list_comb_sort(list, compare_strings);
     t = clock() - t;
     double time_taken = ((double)t) / CLOCKS_PER_SEC;
     printf("\nElapsed time: %f\n", time_taken);
